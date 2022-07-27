@@ -10,6 +10,9 @@ export namespace Components {
     interface AppCoin {
         "match": MatchResults;
     }
+    interface AppDice {
+        "match": MatchResults;
+    }
     interface AppHome {
     }
     interface AppRoot {
@@ -21,6 +24,12 @@ declare global {
     var HTMLAppCoinElement: {
         prototype: HTMLAppCoinElement;
         new (): HTMLAppCoinElement;
+    };
+    interface HTMLAppDiceElement extends Components.AppDice, HTMLStencilElement {
+    }
+    var HTMLAppDiceElement: {
+        prototype: HTMLAppDiceElement;
+        new (): HTMLAppDiceElement;
     };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
@@ -36,6 +45,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-coin": HTMLAppCoinElement;
+        "app-dice": HTMLAppDiceElement;
         "app-home": HTMLAppHomeElement;
         "app-root": HTMLAppRootElement;
     }
@@ -44,12 +54,16 @@ declare namespace LocalJSX {
     interface AppCoin {
         "match"?: MatchResults;
     }
+    interface AppDice {
+        "match"?: MatchResults;
+    }
     interface AppHome {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
         "app-coin": AppCoin;
+        "app-dice": AppDice;
         "app-home": AppHome;
         "app-root": AppRoot;
     }
@@ -59,6 +73,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-coin": LocalJSX.AppCoin & JSXBase.HTMLAttributes<HTMLAppCoinElement>;
+            "app-dice": LocalJSX.AppDice & JSXBase.HTMLAttributes<HTMLAppDiceElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }

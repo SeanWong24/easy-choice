@@ -6,7 +6,10 @@ import { Component, ComponentInterface, h, Host } from '@stencil/core';
   shadow: true,
 })
 export class AppHome implements ComponentInterface {
-  private readonly items = [{ label: 'Toss A Coin', url: '/pick/coin' }];
+  private readonly items = [
+    { label: 'Toss A Coin', url: '/pick/coin' },
+    { label: 'Roll A Dice', url: '/pick/dice' },
+  ];
 
   render() {
     return (
