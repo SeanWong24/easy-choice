@@ -24,7 +24,7 @@ export class AppDice implements ComponentInterface {
             </awesome-button>
           </awesome-flex-item>
           <awesome-flex-item>
-            <h1 style={{ margin: '.25rem 0', height: '3rem' }}>Toss A Coin</h1>
+            <h1 style={{ margin: '.25rem 0', height: '3rem' }}>Roll A Dice</h1>
           </awesome-flex-item>
           <awesome-flex-item xs={12}>
             <awesome-divider style={{ margin: '0' }}></awesome-divider>
