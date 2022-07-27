@@ -1,5 +1,5 @@
 import { MatchResults } from '@stencil-community/router';
-import { Component, Host, h, ComponentInterface, Prop, State, forceUpdate } from '@stencil/core';
+import { Component, Host, h, ComponentInterface, Prop, State } from '@stencil/core';
 import { pickRandomValue } from '../../utils/random';
 
 @Component({
