@@ -8,6 +8,8 @@
   Any global CSS variables should also be applied here.
 */
 
+@import url(../../node_modules/@awesome-elements/ui/dist/awesome-elements/awesome-elements.css);
+
 body {
   margin: 0px;
   padding: 0px;

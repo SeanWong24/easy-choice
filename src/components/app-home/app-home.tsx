@@ -1,23 +1,32 @@
-import { Component, h } from '@stencil/core';
+import { Component, ComponentInterface, h, Host } from '@stencil/core';
 
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
   shadow: true,
 })
-export class AppHome {
+export class AppHome implements ComponentInterface {
+  private readonly items = [{ label: 'Toss A Coin', url: '/pick/coin' }];
+
   render() {
     return (
-      <div class="app-home">
-        <p>
-          Welcome to the Stencil App Starter. You can use this starter to build entire apps all with web components using Stencil! Check out our docs on{' '}
-          <a href="https://stenciljs.com">stenciljs.com</a> to get started.
-        </p>
-
-        <stencil-route-link url="/profile/stencil">
-          <button>Profile page</button>
-        </stencil-route-link>
-      </div>
+      <Host>
+        <awesome-flex>
+          <awesome-flex-item>
+            <h1 style={{ margin: '.25rem 0', height: '3rem' }}>Easy Choice</h1>
+          </awesome-flex-item>
+          <awesome-flex-item xs={12}>
+            <awesome-divider style={{ margin: '0' }}></awesome-divider>
+          </awesome-flex-item>
+        </awesome-flex>
+        <div style={{ padding: '.5rem' }}>
+          {this.items?.map(({ label, url }) => (
+            <awesome-item button href={url}>
+              {label}
+            </awesome-item>
+          ))}
+        </div>
+      </Host>
     );
   }
 }

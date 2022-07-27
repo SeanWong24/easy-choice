@@ -7,26 +7,26 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults } from "@stencil-community/router";
 export namespace Components {
-    interface AppHome {
-    }
-    interface AppProfile {
+    interface AppCoin {
         "match": MatchResults;
+    }
+    interface AppHome {
     }
     interface AppRoot {
     }
 }
 declare global {
+    interface HTMLAppCoinElement extends Components.AppCoin, HTMLStencilElement {
+    }
+    var HTMLAppCoinElement: {
+        prototype: HTMLAppCoinElement;
+        new (): HTMLAppCoinElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
         prototype: HTMLAppHomeElement;
         new (): HTMLAppHomeElement;
-    };
-    interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {
-    }
-    var HTMLAppProfileElement: {
-        prototype: HTMLAppProfileElement;
-        new (): HTMLAppProfileElement;
     };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
@@ -35,22 +35,22 @@ declare global {
         new (): HTMLAppRootElement;
     };
     interface HTMLElementTagNameMap {
+        "app-coin": HTMLAppCoinElement;
         "app-home": HTMLAppHomeElement;
-        "app-profile": HTMLAppProfileElement;
         "app-root": HTMLAppRootElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
-    }
-    interface AppProfile {
+    interface AppCoin {
         "match"?: MatchResults;
+    }
+    interface AppHome {
     }
     interface AppRoot {
     }
     interface IntrinsicElements {
+        "app-coin": AppCoin;
         "app-home": AppHome;
-        "app-profile": AppProfile;
         "app-root": AppRoot;
     }
 }
@@ -58,8 +58,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-coin": LocalJSX.AppCoin & JSXBase.HTMLAttributes<HTMLAppCoinElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
         }
     }
