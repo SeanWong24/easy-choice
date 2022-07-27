@@ -14,6 +14,7 @@ export class AppRoot implements ComponentInterface {
           <stencil-route url="/" component="app-home" exact={true} />
           <stencil-route url="/:type/coin" component="app-coin" />
           <stencil-route url="/:type/dice" component="app-dice" />
+          <stencil-route url="/:type/custom" component="app-custom" />
         </stencil-route-switch>
       </stencil-router>
     );

@@ -9,6 +9,7 @@ export class AppHome implements ComponentInterface {
   private readonly items = [
     { label: 'Toss A Coin', url: '/pick/coin' },
     { label: 'Roll A Dice', url: '/pick/dice' },
+    { label: 'Custom', url: '/pick/custom' },
   ];
 
   render() {
