@@ -13,7 +13,9 @@ enum CoinSide {
   shadow: true,
 })
 export class AppCoin implements ComponentInterface {
-  @State() side?: CoinSide;
+  @State() side = CoinSide.HEAD;
+
+  @State() ready = false;
 
   @Prop() match: MatchResults;
 
@@ -36,13 +38,36 @@ export class AppCoin implements ComponentInterface {
         <div style={{ padding: '.5rem' }}>
           <awesome-button onClick={() => this.toss()}>Toss</awesome-button>
           <br />
-          You got a <awesome-badge style={{ '--awesome-ui-color-primary': 'hsl(120, 70%, 80%)' }}>{CoinSide[this.side] || 'Schrödinger’s Cat'}</awesome-badge>.
+          <div
+            id="coin"
+            style={{
+              height: '5rem',
+              width: '5rem',
+              borderRadius: '50%',
+              boxShadow: `0 5px 10px 0 ${this.ready ? 'var(--awesome-ui-color-primary)' : 'var(--awesome-ui-color-dim)'}`,
+            }}
+          >
+            <awesome-grid rows="1fr auto 1fr" columns="1fr auto 1fr">
+              <awesome-grid-item row={2} column={2} style={{ fontSize: '2rem' }}>
+                {CoinSide[this.side]}
+              </awesome-grid-item>
+            </awesome-grid>
+          </div>
         </div>
       </Host>
     );
   }
 
   private toss() {
-    this.side = pickRandomValue(Object.keys(CoinSide));
+    let count = 0;
+    this.ready = false;
+    const timer = setInterval(() => {
+      this.side = pickRandomValue(Object.keys(CoinSide));
+      count++;
+      if (count >= 50) {
+        clearInterval(timer);
+        this.ready = true;
+      }
+    }, 50);
   }
 }
