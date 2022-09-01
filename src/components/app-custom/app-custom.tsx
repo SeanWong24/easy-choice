@@ -38,7 +38,7 @@ export class AppCustom implements ComponentInterface {
                   disabled={!this.options || this.options.length <= 1}
                   slot="after"
                   variant="hollow"
-                  style={{ color: 'transparent', textShadow: '0 0 0 var(--awesome-ui-color-primary)' }}
+                  style={{ color: 'transparent', textShadow: '0 0 0 var(--awesome-ui-default-color-primary)' }}
                   onClick={() => this.removeOption(i)}
                 >
                   ❌
@@ -46,7 +46,7 @@ export class AppCustom implements ComponentInterface {
               </awesome-item>
             ))}
             <br />
-            <awesome-button variant="hollow" style={{ color: 'transparent', textShadow: '0 0 0 var(--awesome-ui-color-primary)' }} onClick={() => this.addAnOption()}>
+            <awesome-button variant="hollow" style={{ color: 'transparent', textShadow: '0 0 0 var(--awesome-ui-default-color-primary)' }} onClick={() => this.addAnOption()}>
               ➕
             </awesome-button>
           </div>
@@ -54,7 +54,7 @@ export class AppCustom implements ComponentInterface {
           <awesome-button onClick={() => this.pick()}>Pick</awesome-button>
           <br />
           The result is{' '}
-          <awesome-badge style={{ '--awesome-ui-color-primary': this.ready ? 'hsl(120, 80%, 70%)' : 'hsl(0, 0%, 70%)' }}>{this.result || 'a Schrödinger’s Cat'}</awesome-badge>.
+          <awesome-badge style={{ '--awesome-ui-default-color-primary': this.ready ? 'hsl(120, 80%, 70%)' : 'hsl(0, 0%, 70%)' }}>{this.result || 'a Schrödinger’s Cat'}</awesome-badge>.
         </div>
       </Host>
     );

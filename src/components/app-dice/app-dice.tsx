@@ -37,7 +37,7 @@ export class AppDice implements ComponentInterface {
               height: '5rem',
               width: '5rem',
               borderRadius: '.5rem',
-              boxShadow: `0 5px 10px 0 ${this.ready ? 'var(--awesome-ui-color-primary)' : 'var(--awesome-ui-color-dim)'}`,
+              boxShadow: `0 5px 10px 0 ${this.ready ? 'var(--awesome-ui-default-color-primary)' : 'var(--awesome-ui-default-color-dim)'}`,
             }}
           >
             <awesome-grid rows="1fr auto 1fr" columns="1fr auto 1fr">
