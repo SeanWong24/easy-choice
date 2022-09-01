@@ -17,7 +17,7 @@ export class AppHome implements ComponentInterface {
       <Host>
         <awesome-flex>
           <awesome-flex-item>
-            <h1 style={{ margin: '.25rem 0', height: '3rem' }}>Easy Choice</h1>
+            <h1 style={{ margin: '.25rem', height: '3rem' }}>Easy Choice</h1>
           </awesome-flex-item>
           <awesome-flex-item xs={12}>
             <awesome-divider style={{ margin: '0' }}></awesome-divider>
