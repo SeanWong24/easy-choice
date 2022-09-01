@@ -22,6 +22,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@awesome-elements/ui": "github:awesome-elements/ui#5e98bdb9e32cf193cecfbc6d144a9eb1ad37ff52"
+    "@awesome-elements/ui": "github:awesome-elements/ui#27e6aeeb8230b617c64890d969f094dcbe48ca94"
   }
 }

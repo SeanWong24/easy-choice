@@ -24,7 +24,7 @@ export class AppCoin implements ComponentInterface {
       <Host>
         <awesome-flex>
           <awesome-flex-item xs="auto" style={{ height: '3rem', width: '3rem', padding: '.25rem' }}>
-            <awesome-back-button defaultHref="/"></awesome-back-button>
+            <awesome-back-button href="/"></awesome-back-button>
           </awesome-flex-item>
           <awesome-flex-item>
             <h1 style={{ margin: '.25rem 0', height: '3rem' }}>Toss A Coin</h1>
